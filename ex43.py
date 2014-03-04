@@ -18,7 +18,7 @@ PHRASES = {
 		"From *** get the *** attribute and set it to '***'."
 }
 
-# do thet want to drill phrases first
+# do they want to drill phrases first
 PHRASE_FIRST = False
 if len(sys.argv) == 2 and sys.argv[1] == "english":
 	PHRASE_FIRST = True
@@ -36,13 +36,13 @@ def convert(snippet, phrase):
 	
 	for i in range(0, snippet.count("@@@")):
 		param_count = random.randint(1,3)
-		param_names.append(', '.join(random.sample(WORD, param_count)))
+		param_names.append(', '.join(random.sample(WORDS, param_count)))
 	
 	for sentence in snippet, phrase:
 		result = sentence[:]
 		
 		# fake class names
-		for word in class_name:
+		for word in class_names:
 			result = result.replace("###", word, 1)
 		# fake other names
 		for word in other_names:
