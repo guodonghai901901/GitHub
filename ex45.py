@@ -63,7 +63,7 @@ class Lucky_room(object):
 		global blood
 		
 		print "\t Apple can get you more power, how many people do you want?"
-		number_a = raw_input("Input a number between 1 to 3:")
+		number_a = raw_input("\t Input a number between 1 to 3:")
 		if number_a == "1":
 			print "\t En, one apple is very suitable for you! You power raises 100 points."
 			power -= 100
@@ -122,7 +122,8 @@ class Dead_bridge(object):
 		global power
 		global penny
 		global blood
-		step = random.randint(1, penny / 10)
+		step = random.randint(1, 150)
+		print "\t Cross the bridge will spend 150 points of you power and blood and 500 pennies!"
 		power -= step
 		blood -= step
 		
@@ -160,7 +161,7 @@ def f_practice_house():
 	loop = True
 	goon = True
 	while (loop or goon):
-		tool = raw_input("Enter bike or run: ")
+		tool = raw_input("\t Enter bike or run: ")
 		if tool == "bike":
 			practice_house.ride_bike()
 			loop = False
@@ -169,14 +170,14 @@ def f_practice_house():
 			loop = False
 		else:
 			print "\t Enter wrong name! "
-			yesorno = raw_input("Y or N to continue: ")
+			yesorno = raw_input("\t Y or N to continue: ")
 			if yesorno == "Y":
-				tool = raw_input("Enter bike or run: ")
+				tool = raw_input("\t Enter bike or run: ")
 			else:
 				print "\t You lose the last chance! You quit the game!"
 				function.exit_1()
-		print "\t Want to leave this room? Press Y to leave, N to keep in."
-		yes2 = raw_input("Enter Y/N : ")
+		print "\t Want to keep in this room? Press Y to keep in, N to leave."
+		yes2 = raw_input("\t Enter Y/N : ")
 		if yes2 == 'Y':
 			goon = True
 		else:
@@ -188,7 +189,7 @@ def f_lucky_room():
 	print "\t Welcome to lucky room!"
 	print "\t There are four things you could use, but you can choose only one time. "
 	print "\t A bag, an red apple, a bomb or a cake? "
-	lucky = raw_input("Enter bag, apple, bomb or cake: ")
+	lucky = raw_input("\t Enter bag, apple, bomb or cake: ")
 	while (lucky and i <4):
 		if lucky == "bag":
 			lucky_room.Bag()
@@ -208,7 +209,7 @@ def f_lucky_room():
 
 		else:
 			print "\t You enter wrong name.? Try again. "
-			lucky = raw_input("Enter bag, apple, bomb or cake: ")
+			lucky = raw_input("\t Enter bag, apple, bomb or cake: ")
 			i += 1
 			
 				
@@ -225,18 +226,18 @@ def start():
 	global blood
 	
 	print """ \t Welcome! This is the game: Tower \n
-			\t First of all, you got to enter practice house to strength your energy.\n\n
-			"""	
+\t First of all, you got to enter practice house to strength your energy.\n\n
+"""	
 	f_practice_house()
 	
-	if (power > 0 and penny > 0):
+	if (penny > 0):
 		print """\t As followed you will go to Lucky Room! """
 		f_lucky_room()
 	else:
 		print "\t Your resources run out...... You lose the game!"
 		function.exit_1()
 		
-	if (power > 0 and blood > 0 and penny > 0):
+	if (penny > 0):
 		f_dead_bridge()
 	else:
 		print "\t Your resources run out...... You lose the game!"
@@ -245,9 +246,15 @@ def start():
 	if (power > 0 and blood > 0 and penny > 0):
 		f_tower()		
 	else:
-		print "\t Your resources run out...... You lose the game!"
+		print "\t Your resources run out...... "
+		if power <= 0:
+			print "\t Your power % d is not enough!" % power
+		elif blood <= 0:
+			print "\t Your blood % d is not enough!" % blood
+		else:
+			print "\t Your penny % d is not enough!" % penny
 		function.exit_1()
-		
+		print "\t You lose the game!"
 start()
 
 		
