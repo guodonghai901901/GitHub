@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 # 输出字符串Mary had a little lamb.
 print "Mary had a little lamb."
 # 输出字符串且引用格式化字符s

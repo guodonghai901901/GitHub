@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 # 此三行是定义people cars buses的取值分别为 30 40 15
 people = 30
 cars = 40

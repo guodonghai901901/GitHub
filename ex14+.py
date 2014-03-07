@@ -17,7 +17,7 @@ print """
 Alright, so you said %r about liking me.
 You live in %r. Not sure where that is.
 And you have a %r computer. 
-Also you say %r that liuchong is your hasband.
+Also you say %r that lc is your husband.
 """ % (likes, lives, computer, facts),
 print """By the way, your husband is now in %r too, 
 you guys are so happy.""" % husband_city

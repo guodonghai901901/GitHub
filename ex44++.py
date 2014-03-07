@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #定义一个父类
 class Parent(object):
 	
@@ -23,7 +24,7 @@ class Child(Parent):
 	#子类中包含一个自定义的altered函数 此函数中输出一部分字符，调用了父类的altered()函数 再输出一部分字符
 	def altered(self):
 		print "CHILD, BEFORE PARENT altered()"
-		super(child, self).altered()
+		super(Child, self).altered()
 		print "CHILD, AFTER PARENT altered()"
 
 #建立父类实例 建立子类实例		

@@ -1,6 +1,6 @@
-def TheThing(objects):
+class TheThing(object):
 	
-		def__int__(self):
+		def __init__(self):
 			self.number = 0
 		
 		def some_function(self):

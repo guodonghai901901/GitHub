@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 #给变量cars赋值100整数
 cars = 100
 #给变量space_in_a_car赋值4.0浮点数

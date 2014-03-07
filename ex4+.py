@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #Traceback (most recent call last):
 #File "ex4.py", line 8, in <module>
 #average_passengers_per_car = car_pool_capacity / passenger

@@ -1,6 +1,6 @@
 from sys import argv
 script, filename = argv
-my_file_content = open(filename, 'w')
+my_file_content = open(filename, 'w+')
 print my_file_content.read()
 line1 = raw_input("Line 1:")
 my_file_content.write(line1)
