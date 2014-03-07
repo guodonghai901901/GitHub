@@ -1,14 +1,9 @@
 # -*- coding: UTF-8 -*-
+from sys import exit
 
-def add (character_name, added_by):
-	print character_name
-	print added_by
-	character_name += added_by
-	return character_name
+def exit_0 ():
+	exit(0)
 
 	
-def sub (character_name, subtracted_by):
-	print character_name
-	print subtracted_by
-	character_name -= subtracted_by
-	return character_name
+def exit_1 ():
+	exit(1)

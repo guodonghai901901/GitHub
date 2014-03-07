@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 import random
-from sys import exit
-#import function
+#from sys import exit
+import function
 
 
 
@@ -81,7 +81,7 @@ class Lucky_room(object):
 			penny -= 300
 		else:
 			print "\t I have no idea what you typed...."
-			exit(1)
+			function.exit_1()
 			
 	def Bomb(self):
 		global power
@@ -103,7 +103,7 @@ class Lucky_room(object):
 			You win the game! Lucky man!"""
 			print """\t ****************************************************
 						\t****************************************************"""
-			exit(0)
+			function.exit_1()
 		else:
 			print "\t Nothing you got from bomb. :( Also you're lucky! :)"
 	
@@ -174,7 +174,7 @@ def f_practice_house():
 				tool = raw_input("Enter bike or run: ")
 			else:
 				print "\t You lose the last chance! You quit the game!"
-				exit(0)
+				function.exit_1()
 		print "\t Want to leave this room? Press Y to leave, N to keep in."
 		yes2 = raw_input("Enter Y/N : ")
 		if yes2 == 'Y':
@@ -234,19 +234,19 @@ def start():
 		f_lucky_room()
 	else:
 		print "\t Your resources run out...... You lose the game!"
-		exit(0)
+		function.exit_1()
 		
 	if (power > 0 and blood > 0 and penny > 0):
 		f_dead_bridge()
 	else:
 		print "\t Your resources run out...... You lose the game!"
-		exit(0)
+		function.exit_1()
 		
 	if (power > 0 and blood > 0 and penny > 0):
 		f_tower()		
 	else:
 		print "\t Your resources run out...... You lose the game!"
-		exit(0)
+		function.exit_1()
 		
 start()
 
